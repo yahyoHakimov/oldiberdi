@@ -1,5 +1,5 @@
 import { LoginPage, RegistrationPage } from './Auth'
 
-import { HomeView } from './Tabs'
+import { HomePage, LoansPage, DebtsPage, DashboardPage, CalendarPage } from './Tabs'
 
-export { LoginPage, RegistrationPage, HomeView }
+export { LoginPage, RegistrationPage, HomePage, LoansPage, DebtsPage, DashboardPage, CalendarPage }

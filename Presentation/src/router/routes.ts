@@ -1,9 +1,7 @@
 import { DefaultLayout } from '@/layouts'
-import HomeView from '../views/Tabs/Home/HomeView.vue'
 import AuthLayout from '@/layouts/auth/AuthLayout.vue'
 import { LoginPage, RegistrationPage } from '@/views'
-import { DashboardPage, DebtsPage, LoansPage } from '@/views/Tabs'
-import CalendarPage from '@/views/Tabs/Calendar/CalendarPage.vue'
+import { DashboardPage, DebtsPage, LoansPage, HomePage, CalendarPage } from '@/views'
 
 export const Routes = [
   {
@@ -13,7 +11,7 @@ export const Routes = [
       {
         path: '',
         name: 'home',
-        component: HomeView
+        component: HomePage
       },
       {
         path: '/loans',

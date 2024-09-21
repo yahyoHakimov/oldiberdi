@@ -1,3 +1,3 @@
-import HomeView from './HomeView.vue'
+import HomePage from './HomePage.vue'
 
-export { HomeView }
+export { HomePage }
