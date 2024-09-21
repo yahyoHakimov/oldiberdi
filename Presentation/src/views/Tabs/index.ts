@@ -1,3 +1,4 @@
 import { HomeView } from './Home'
+import { LoansPage } from './Loans'
 
-export { HomeView }
+export { HomeView, LoansPage }
