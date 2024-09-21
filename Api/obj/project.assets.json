@@ -88,6 +88,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
       }
     }
   },
@@ -420,10 +430,16 @@
         "swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Domain >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -433,11 +449,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\newHack\\oldiberdi\\Api\\Api.csproj",
+      "projectUniqueName": "D:\\newHack\\Api\\Api.csproj",
       "projectName": "Api",
-      "projectPath": "D:\\newHack\\oldiberdi\\Api\\Api.csproj",
+      "projectPath": "D:\\newHack\\Api\\Api.csproj",
       "packagesPath": "C:\\Users\\hakim\\.nuget\\packages\\",
-      "outputPath": "D:\\newHack\\oldiberdi\\Api\\obj\\",
+      "outputPath": "D:\\newHack\\Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hakim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -453,7 +469,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\newHack\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\newHack\\Domain\\Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
