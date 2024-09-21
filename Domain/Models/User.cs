@@ -1,24 +1,26 @@
-﻿namespace Domain.Models
+﻿    namespace Domain.Models
 {
     public class User
     {
-        public int Id { get; set; }  // Primary Key
+        public int Id { get; set; }
+        public string Phone { get; set; }
+        public string PasswordHash { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Phone { get; set; }
-        public string PasswordHash { get; set; }  // Store the hashed password
+        public string Patronimic { get; set; }
+        public string Email { get; set; }
+        public int Pinfl { get; set; }
         public DateTime Dob { get; set; }
         public string PassportNum { get; set; }
         public int PassportType { get; set; }
-        public int Pinfl { get; set; }
-        public int Country { get; set; }
-        public int Region { get; set; }
-        public int District { get; set; }
+        public int CountryId { get; set; }  // FK to Country
+        public int RegionId { get; set; }   // FK to Region
+        public int DistrictId { get; set; } // FK to District
         public string Address { get; set; }
         public bool LivenessPassed { get; set; } = false;
         public bool Identified { get; set; } = false;
         public StatusEnum Status { get; set; } = StatusEnum.New;
-        public int SubPlan { get; set; }
+        public int SubPlanId { get; set; }  // FK to Subscription Plan
         public DateTime? SubExpireDate { get; set; }
         public DateTime AddedOn { get; set; }
         public DateTime UpdatedOn { get; set; }

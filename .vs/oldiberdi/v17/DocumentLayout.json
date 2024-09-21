@@ -1,0 +1,130 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\newHack\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AB57398D-175F-4912-B7EA-48ED4FFF2938}|Api\\Api.csproj|d:\\newhack\\api\\controllers\\regioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB57398D-175F-4912-B7EA-48ED4FFF2938}|Api\\Api.csproj|solutionrelative:api\\controllers\\regioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{744CA0AE-63F8-4FE4-94A4-4F02705CFF6F}|Infrastructure\\Infrastructure.csproj|d:\\newhack\\infrastructure\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{744CA0AE-63F8-4FE4-94A4-4F02705CFF6F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{240169C3-30CD-4789-A999-9EEBC1FC4FBE}|Application\\Application.csproj|d:\\newhack\\application\\interface\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{240169C3-30CD-4789-A999-9EEBC1FC4FBE}|Application\\Application.csproj|solutionrelative:application\\interface\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{240169C3-30CD-4789-A999-9EEBC1FC4FBE}|Application\\Application.csproj|d:\\newhack\\application\\service\\regionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{240169C3-30CD-4789-A999-9EEBC1FC4FBE}|Application\\Application.csproj|solutionrelative:application\\service\\regionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{744CA0AE-63F8-4FE4-94A4-4F02705CFF6F}|Infrastructure\\Infrastructure.csproj|d:\\newhack\\infrastructure\\repositories\\regionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{744CA0AE-63F8-4FE4-94A4-4F02705CFF6F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\regionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{240169C3-30CD-4789-A999-9EEBC1FC4FBE}|Application\\Application.csproj|d:\\newhack\\application\\interface\\irepository\\iregionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{240169C3-30CD-4789-A999-9EEBC1FC4FBE}|Application\\Application.csproj|solutionrelative:application\\interface\\irepository\\iregionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegionController.cs",
+              "DocumentMoniker": "D:\\newHack\\Api\\Controllers\\RegionController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\RegionController.cs",
+              "ToolTip": "D:\\newHack\\Api\\Controllers\\RegionController.cs",
+              "RelativeToolTip": "Api\\Controllers\\RegionController.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAgwCcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T23:18:22.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\newHack\\Infrastructure\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\UnitOfWork.cs",
+              "ToolTip": "D:\\newHack\\Infrastructure\\UnitOfWork.cs",
+              "RelativeToolTip": "Infrastructure\\UnitOfWork.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAACMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T23:18:09.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\newHack\\Application\\Interface\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Application\\Interface\\IUnitOfWork.cs",
+              "ToolTip": "D:\\newHack\\Application\\Interface\\IUnitOfWork.cs",
+              "RelativeToolTip": "Application\\Interface\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T23:17:56.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegionService.cs",
+              "DocumentMoniker": "D:\\newHack\\Application\\Service\\RegionService.cs",
+              "RelativeDocumentMoniker": "Application\\Service\\RegionService.cs",
+              "ToolTip": "D:\\newHack\\Application\\Service\\RegionService.cs",
+              "RelativeToolTip": "Application\\Service\\RegionService.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAkwCYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T23:17:37.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegionRepository.cs",
+              "DocumentMoniker": "D:\\newHack\\Infrastructure\\Repositories\\RegionRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\RegionRepository.cs",
+              "ToolTip": "D:\\newHack\\Infrastructure\\Repositories\\RegionRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\RegionRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAEAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T23:17:11.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IRegionRepository.cs",
+              "DocumentMoniker": "D:\\newHack\\Application\\Interface\\IRepository\\IRegionRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Interface\\IRepository\\IRegionRepository.cs",
+              "ToolTip": "D:\\newHack\\Application\\Interface\\IRepository\\IRegionRepository.cs",
+              "RelativeToolTip": "Application\\Interface\\IRepository\\IRegionRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T23:16:47.452Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

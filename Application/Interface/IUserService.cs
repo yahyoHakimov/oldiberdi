@@ -12,5 +12,6 @@ namespace Application.Interface
     {
         Task<User> RegisterUserAsync(User user, string password);
         Task<User> LoginUserAsync(string phone, string password);
+        Task<User> GetUserByIdAsync(int id);
     }
 }
