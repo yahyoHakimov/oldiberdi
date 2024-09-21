@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\newHack\\Api\\Api.csproj": {}
+    "D:\\newHack\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\newHack\\Api\\Api.csproj": {
+    "D:\\newHack\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\newHack\\Api\\Api.csproj",
-        "projectName": "Api",
-        "projectPath": "D:\\newHack\\Api\\Api.csproj",
+        "projectUniqueName": "D:\\newHack\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "D:\\newHack\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\hakim\\.nuget\\packages\\",
-        "outputPath": "D:\\newHack\\Api\\obj\\",
+        "outputPath": "D:\\newHack\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hakim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,12 +44,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.4.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -62,9 +56,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
