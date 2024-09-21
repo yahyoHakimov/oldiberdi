@@ -51,6 +51,11 @@ namespace Application.Services
             return user;
         }
 
+        public async Task<User> GetUserByIdAsync(int id)
+        {
+            return await _unitOfWork.UserRepository.GetUserByIdAsync(id);
+        }
+
         // Helper method to hash the password
         private string HashPassword(string password)
         {
@@ -73,5 +78,6 @@ namespace Application.Services
             var hashedPassword = HashPassword(password);
             return hashedPassword == storedHash;
         }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using Application.Interfaces;
+﻿using Application.Interface.IRepository;
 using Domain.Models;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -22,10 +22,14 @@ namespace Infrastructure.Repositories
             return user;
         }
 
-        public async Task<User> GetUserByPhoneAsync(string phone)
+        public async Task<IEnumerable<User>> GetUsersAsync()
         {
-            return await _context.Users
-                .FirstOrDefaultAsync(u => u.Phone == phone);
+            return await _context.Users.ToListAsync();
+        }
+
+        public async Task<User> GetUserByPhoneAsync(string phoneNumber)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Phone == phoneNumber);
         }
     }
 }

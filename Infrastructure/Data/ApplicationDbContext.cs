@@ -11,6 +11,8 @@ namespace Infrastructure.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Country> Countries { get; set; }  // Add this line
+
 
         // Other DbSet<T> entities
     }

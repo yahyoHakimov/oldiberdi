@@ -54,5 +54,11 @@ namespace Api.Controllers
                 return Unauthorized(ex.Message);
             }
         }
+
+        [HttpGet("{id}")]
+        public async Task<User> GetUserById(int id)
+        {
+            return await _userService.GetUserByIdAsync(id);
+        }
     }
 }
