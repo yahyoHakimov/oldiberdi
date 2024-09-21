@@ -9,6 +9,9 @@ namespace Application.Interfaces
         IUserRepository UserRepository { get; }
         ICountryRepository CountryRepository { get; }
         IRegionRepository RegionRepository { get; }
+        IDistrictRepository DistrictRepository { get; }
+        ISubscriptionPlanRepository SubscriptionPlanRepository { get; }  // Add this line
+
         Task CompleteAsync();
     }
 }
