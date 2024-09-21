@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { HomeIcon, ChartNetwork, HandCoins, Handshake, Ellipsis } from 'lucide-vue-next';
+import { HomeIcon, ChartNetwork, HandCoins, Handshake, Ellipsis, UserCircle, LogOut, Calendar } from 'lucide-vue-next';
 import {
     Drawer,
     DrawerClose,
     DrawerContent,
-    DrawerDescription,
+    // DrawerDescription,
     DrawerFooter,
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
 } from '@/components/ui/drawer'
+import { Button } from '@/components/ui/button';
 </script>
 
 <template>
@@ -42,13 +43,32 @@ import {
                 </DrawerTrigger>
                 <DrawerContent>
                     <DrawerHeader>
-                        <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-                        <DrawerDescription>This action cannot be undone.</DrawerDescription>
+                        <DrawerTitle>More Actions</DrawerTitle>
+                        <!-- <DrawerDescription></DrawerDescription> -->
                     </DrawerHeader>
+                    <div class="p-2">
+                        <Button variant="ghost" class="w-full justify-start gap-2 text-lg">
+                            <UserCircle />
+                            <span>
+                                Profile
+                            </span>
+                        </Button>
+                        <Button variant="ghost" class="w-full justify-start gap-2 text-lg">
+                            <Calendar />
+                            <span>
+                                Calendar
+                            </span>
+                        </Button>
+                        <Button variant="ghost" class="w-full justify-start gap-2 text-lg mt-10">
+                            <LogOut />
+                            <span>
+                                Logout
+                            </span>
+                        </Button>
+                    </div>
                     <DrawerFooter>
-                        <Button>Submit</Button>
                         <DrawerClose>
-                            <Button variant="outline">
+                            <Button variant="outline" class="w-full">
                                 Cancel
                             </Button>
                         </DrawerClose>
