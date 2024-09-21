@@ -1,11 +1,10 @@
 <script setup lang="ts">
-// import { RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="w-full flex justify-center items-center">
-    Header
+  <div class="w-full flex bg-background justify-center items-center py-3 border-b">
+    OldiBerdi
   </div>
 
   <RouterView />
