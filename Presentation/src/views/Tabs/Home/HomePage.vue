@@ -8,6 +8,10 @@ import {
     CardHeader,
     CardTitle,
 } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
 </script>
 
 
@@ -45,10 +49,10 @@ import {
             </RouterLink>
         </div>
         <div class="grid md:grid-cols-2 gap-3 mt-5">
-            <Card>
-                <CardHeader>
+            <Card @click="router.push('loans')">
+                <CardHeader class="flex justify-between items-center">
                     <CardTitle>Loans</CardTitle>
-                    <CardDescription>Card Description</CardDescription>
+                    <Button>Add Loan</Button>
                 </CardHeader>
                 <CardContent>
                     Card Content
@@ -57,10 +61,10 @@ import {
                     Card Footer
                 </CardFooter>
             </Card>
-            <Card>
-                <CardHeader>
+            <Card @click="router.push('debts')">
+                <CardHeader class="flex justify-between items-center">
                     <CardTitle>Debts</CardTitle>
-                    <CardDescription>Card Description</CardDescription>
+                    <Button>Add Debt</Button>
                 </CardHeader>
                 <CardContent>
                     Card Content

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { HomeIcon, ChartNetwork, HandCoins, Handshake, Ellipsis, UserCircle, LogOut, Calendar } from 'lucide-vue-next';
+import { HomeIcon, ChartNetwork, HandCoins, Handshake, Ellipsis, UserCircle, LogOut, Calendar, Gem } from 'lucide-vue-next';
 import {
     Drawer,
     DrawerClose,
@@ -57,6 +57,12 @@ import { Button } from '@/components/ui/button';
                             <Calendar />
                             <span>
                                 Calendar
+                            </span>
+                        </Button>
+                        <Button variant="ghost" class="w-full justify-start gap-2 text-lg">
+                            <Gem class="text-cyan-500" />
+                            <span>
+                                Subscription
                             </span>
                         </Button>
                         <Button variant="ghost" class="w-full justify-start gap-2 text-lg mt-10">
