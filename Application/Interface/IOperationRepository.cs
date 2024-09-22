@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Domain.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Interface
+namespace Application.Interfaces
 {
-    internal interface IOperationRepository
+    public interface IOperationRepository
     {
+        Task<Operation> CreateOperationAsync(Operation operation);
+        Task<Operation> GetOperationByIdAsync(int id);
+        Task<IEnumerable<Operation>> GetAllOperationsAsync();
     }
 }

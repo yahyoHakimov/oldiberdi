@@ -11,6 +11,14 @@ namespace Application.Interfaces
         IRegionRepository RegionRepository { get; }
         IDistrictRepository DistrictRepository { get; }
         ISubscriptionPlanRepository SubscriptionPlanRepository { get; }  // Add this line
+        IOperationRepository OperationRepository { get; }  // Add this line
+        ICounterpartyRepository CounterpartyRepository { get; }  // Add this line
+        ITrackRecordRepository TrackRecordRepository { get; }
+        IConfirmationRepository ConfirmationRepository { get; }
+        IReminderRepository ReminderRepository { get; }
+        IPaymentRepository PaymentRepository { get; }
+        INotificationRepository NotificationRepository { get; }
+
 
         Task CompleteAsync();
     }
