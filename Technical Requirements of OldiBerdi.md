@@ -53,8 +53,8 @@ Moderator has not acces to edit user personal data, or any type of data of users
 # 8. Scheme of the project 
 Our project architecture is illustrated in the UML diagram below:
 
-![Project Scheme](uml-diagrams\UML1.jpeg")
-![Project Scheme](uml-diagrams\UML2.png)
+![Project Scheme](uml-diagrams/UML1.jpeg")
+![Project Scheme](uml-diagrams/UML2.png)
 # 9. Integreations
 The project will be integrated with three third-party services:
 1. **Identification service.** As an identification service, integration with My ID is provided, which is by far the most common identification tool with high reliability.
