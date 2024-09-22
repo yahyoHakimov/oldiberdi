@@ -45,7 +45,10 @@ npm install
 dotnet restore
 Set Up Environment Variables: Create a .env file in the root directory with the following information:
 
-# Access the frontend at: http://localhost:7472
+# Access the frontend at: 
+``` bash
+   http://localhost:7472
+
 # Access the API at: http://localhost:3000
 🎮 Usage
 📲 Register an Account: Users can sign up using their phone number and a secure password.
