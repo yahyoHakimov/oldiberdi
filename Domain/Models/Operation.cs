@@ -1,4 +1,6 @@
-﻿namespace Domain.Models
+﻿using Domain.Models.Enums;
+
+namespace Domain.Models
 {
     public class Operation
     {
@@ -45,12 +47,4 @@
         Recurring
     }
 
-    public enum StatusEnum
-    {
-        Draft,
-        Active,
-        Confirmed,
-        Closed,
-        Archived
-    }
 }

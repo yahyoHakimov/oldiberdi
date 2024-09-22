@@ -27,9 +27,15 @@ namespace Infrastructure.Repositories
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<User> GetUserByPhoneAsync(string phoneNumber)
+        public async Task<User> GetUserByIdAsync(int id)
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Phone == phoneNumber);
+            return await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
         }
+
+        public async Task<User> GetUserByPhoneAsync(string phoneNnumbeer)
+        {
+            return await _context.Users.FirstOrDefaultAsync(x => x.Phone == phoneNnumbeer);
+        }
+
     }
 }

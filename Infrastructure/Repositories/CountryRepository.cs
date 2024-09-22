@@ -1,6 +1,7 @@
 ﻿using Application.Interface.IRepository;
 using Domain.Models;
 using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;

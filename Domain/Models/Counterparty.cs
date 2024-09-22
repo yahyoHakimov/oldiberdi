@@ -16,6 +16,7 @@
         public ICollection<Operation> Operations { get; set; } // Counterparty can be part of multiple Operations
         public ICollection<Reminder> Reminders { get; set; } // Counterparty can receive multiple Reminders
         public ICollection<Payment> Payments { get; set; } // Counterparty can receive multiple Payments
+        public ICollection<Confirmation> Confirmations { get; set; } // User receives multiple Confirmations
 
     }
 }

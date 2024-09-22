@@ -12,8 +12,8 @@
         public DateTime AddedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
 
-        public ICollection<TrackRecord> TrackRecords { get; set; } // Confirmation can be associated with multiple TrackRecords
 
+        public ICollection<TrackRecord> TrackRecords { get; set; } // User receives multiple Confirmations
     }
 
     public enum ConfirmationChannelEnum

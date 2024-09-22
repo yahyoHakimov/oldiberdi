@@ -10,7 +10,8 @@ namespace Application.Interface.IRepository
     public interface IUserRepository
     {
         Task<User> CreateUserAsync(User user);
-        Task<User> GetUserByPhoneAsync(string phone);
+        Task<User> GetUserByIdAsync(int id);
+        Task<User> GetUserByPhoneAsync(string phoneNnumbeer);
         Task<IEnumerable<User>> GetUsersAsync();
     }
 }
