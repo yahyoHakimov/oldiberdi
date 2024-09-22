@@ -26,16 +26,14 @@ namespace Infrastructure.Repositories
         public async Task<Confirmation> GetConfirmationByIdAsync(int id)
         {
             return await _context.Confirmations
-                .Include(c => c.Author)
-                .Include(c => c.Counterparty)
+                /*.Include(c => c.Counterparty)*/
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<IEnumerable<Confirmation>> GetAllConfirmationsAsync()
         {
             return await _context.Confirmations
-                .Include(c => c.Author)
-                .Include(c => c.Counterparty)
+                /*.Include(c => c.Counterparty)*/
                 .ToListAsync();
         }
     }

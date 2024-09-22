@@ -26,92 +26,106 @@ namespace Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Define relationships
+            // User relationships
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Operations)
+                .WithOne(o => o.Owner)
+                .HasForeignKey(o => o.OwnerId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // User and Operations (One-to-Many)
-            modelBuilder.Entity<Operation>()
-                .HasOne(o => o.Owner)
-                .WithMany(u => u.Operations) // Assuming User has a collection of operations
-                .HasForeignKey(o => o.OwnerId);
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Counterparties)
+                .WithOne(c => c.Author)
+                .HasForeignKey(c => c.AuthorId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // User and Counterparty (One-to-Many)
-            modelBuilder.Entity<Counterparty>()
-                .HasOne(c => c.Author)
-                .WithMany(u => u.Counterparties) // Assuming User has a collection of counterparties
-                .HasForeignKey(c => c.AuthorId);
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Notifications)
+                .WithOne(n => n.Receiver)
+                .HasForeignKey(n => n.ReceiverId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // Operation and Counterparty (One-to-One or Many-to-One)
+            // Operation relationships
             modelBuilder.Entity<Operation>()
                 .HasOne(o => o.Counterparty)
-                .WithMany(c => c.Operations) // Assuming Counterparty has a collection of operations
-                .HasForeignKey(o => o.CounterpartyId);
+                .WithMany(c => c.Operations)
+                .HasForeignKey(o => o.CounterpartyId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // TrackRecord and Operation (Many-to-One)
+            modelBuilder.Entity<Operation>()
+                .HasMany(o => o.TrackRecords)
+                .WithOne(tr => tr.Operation)
+                .HasForeignKey(tr => tr.OperationId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Operation>()
+                .HasMany(o => o.Reminders)
+                .WithOne(r => r.Operation)
+                .HasForeignKey(r => r.OperationId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Operation>()
+                .HasMany(o => o.Payments)
+                .WithOne(p => p.Operation)
+                .HasForeignKey(p => p.OperationId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Operation>()
+                .HasMany(o => o.Notifications)
+                .WithOne(n => n.Operation)
+                .HasForeignKey(n => n.OperationId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // TrackRecord relationships
             modelBuilder.Entity<TrackRecord>()
-                .HasOne(tr => tr.Operation)
-                .WithMany(o => o.TrackRecords) // Assuming Operation has a collection of track records
-                .HasForeignKey(tr => tr.OperationId);
+                .HasOne(tr => tr.Author)
+                .WithMany()
+                .HasForeignKey(tr => tr.AuthorId)
+                .OnDelete(DeleteBehavior.NoAction);
 
-            // TrackRecord and Confirmation (Optional Many-to-One)
             modelBuilder.Entity<TrackRecord>()
                 .HasOne(tr => tr.Confirmation)
-                .WithMany(c => c.TrackRecords) // Assuming Confirmation has a collection of track records
+                .WithMany(c => c.TrackRecords)
                 .HasForeignKey(tr => tr.ConfirmationId)
-                .OnDelete(DeleteBehavior.SetNull); // Optional relationship
+                .OnDelete(DeleteBehavior.NoAction);
 
-            // TrackRecord and Payment (Optional Many-to-One)
             modelBuilder.Entity<TrackRecord>()
                 .HasOne(tr => tr.Payment)
-                .WithMany(p => p.TrackRecords) // Assuming Payment has a collection of track records
+                .WithMany(p => p.TrackRecords)
                 .HasForeignKey(tr => tr.PaymentId)
-                .OnDelete(DeleteBehavior.SetNull); // Optional relationship
+                .OnDelete(DeleteBehavior.NoAction);
 
-            // Reminder and Operation (Many-to-One)
-            modelBuilder.Entity<Reminder>()
-                .HasOne(r => r.Operation)
-                .WithMany(o => o.Reminders) // Assuming Operation has a collection of reminders
-                .HasForeignKey(r => r.OperationId);
-
-            // Reminder and Counterparty (Many-to-One)
+            // Reminder relationships
             modelBuilder.Entity<Reminder>()
                 .HasOne(r => r.Receiver)
-                .WithMany(c => c.Reminders) // Assuming Counterparty has a collection of reminders
-                .HasForeignKey(r => r.ReceiverId);
+                .WithMany(c => c.Reminders)
+                .HasForeignKey(r => r.ReceiverId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // Payment and Operation (Many-to-One)
-            modelBuilder.Entity<Payment>()
-                .HasOne(p => p.Operation)
-                .WithMany(o => o.Payments) // Assuming Operation has a collection of payments
-                .HasForeignKey(p => p.OperationId);
-
-            // Payment and Counterparty (Many-to-One)
+            // Payment relationships
             modelBuilder.Entity<Payment>()
                 .HasOne(p => p.Receiver)
-                .WithMany(c => c.Payments) // Assuming Counterparty has a collection of payments
-                .HasForeignKey(p => p.ReceiverId);
-
-            // Notification and Operation (Many-to-One)
-            modelBuilder.Entity<Notification>()
-                .HasOne(n => n.Operation)
-                .WithMany(o => o.Notifications) // Assuming Operation has a collection of notifications
-                .HasForeignKey(n => n.OperationId);
-
-            // Notification and User (Many-to-One)
-            modelBuilder.Entity<Notification>()
-                .HasOne(n => n.Receiver)
-                .WithMany(u => u.Notifications) // Assuming User has a collection of notifications
-                .HasForeignKey(n => n.ReceiverId);
+                .WithMany(c => c.Payments)
+                .HasForeignKey(p => p.ReceiverId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Country, Region, District relationships
             modelBuilder.Entity<Region>()
                 .HasOne(r => r.Country)
                 .WithMany(c => c.Regions)
-                .HasForeignKey(r => r.CountryCode);
+                .HasForeignKey(r => r.CountryCode)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<District>()
                 .HasOne(d => d.Region)
                 .WithMany(r => r.Districts)
-                .HasForeignKey(d => d.RegionCode);
+                .HasForeignKey(d => d.RegionCode)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // SubscriptionPlan relationships (if any)
+            // Add any specific configurations for SubscriptionPlan if needed
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

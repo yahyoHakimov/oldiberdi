@@ -1,4 +1,6 @@
-﻿namespace Domain.Models
+﻿using Domain.Models.Enums;
+
+namespace Domain.Models
 {
     public class SubscriptionPlan
     {
@@ -23,7 +25,7 @@
         Day
     }
 
-    public enum StatusEnum
+    public enum StatusEnums
     {
         Draft,
         Active,
