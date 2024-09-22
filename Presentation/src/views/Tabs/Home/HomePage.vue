@@ -1,6 +1,13 @@
 <script lang="ts" setup>
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from '@/components/ui/sheet'
+import {
     Card,
     CardContent,
     CardDescription,
@@ -11,9 +18,62 @@ import {
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
+import api from '@/api/axios'
+import { ref } from 'vue';
+import AddLoan from '@/components/Add/AddLoan.vue';
+import AddDebt from '@/components/Add/AddDebt.vue';
 
 const router = useRouter()
 const auth = useAuthStore()
+
+const debts = ref([])
+const loans = ref([])
+const transactions = ref([])
+
+const getDebts = async () => {
+    try {
+        const response = await api.get('/operations', {
+            params: {
+                user_id: auth.user.id
+            }
+        })
+        debts.value = response.data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getLoans = async () => {
+    try {
+        const response = await api.get('/operations', {
+            params: {
+                user_id: auth.user.id
+            }
+        })
+        loans.value = response.data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getTransactions = async () => {
+    try {
+        const response = await api.get('/getTransactions', {
+            params: {
+                user_id: auth.user.id
+            }
+        })
+        transactions.value = response.data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const refetch = () => {
+    getDebts()
+    getLoans()
+    getTransactions()
+}
 </script>
 
 
@@ -52,9 +112,19 @@ const auth = useAuthStore()
         </div>
         <div class="grid md:grid-cols-2 gap-3 mt-5">
             <Card @click="router.push('loans')">
-                <CardHeader class="flex justify-between items-center">
+                <CardHeader class="flex justify-between items-center flex-row">
                     <CardTitle>Loans</CardTitle>
-                    <Button>Add Loan</Button>
+                    <Sheet>
+                        <SheetTrigger>
+                            <Button>Add Loan</Button>
+                        </SheetTrigger>
+                        <SheetContent class="w-full md:w-[400px]">
+                            <SheetHeader>
+                                <SheetTitle>Add Loan</SheetTitle>
+                            </SheetHeader>
+                            <AddLoan @refetch="refetch" />
+                        </SheetContent>
+                    </Sheet>
                 </CardHeader>
                 <CardContent>
                     Card Content
@@ -64,9 +134,19 @@ const auth = useAuthStore()
                 </CardFooter>
             </Card>
             <Card @click="router.push('debts')">
-                <CardHeader class="flex justify-between items-center">
+                <CardHeader class="flex justify-between items-center flex-row">
                     <CardTitle>Debts</CardTitle>
-                    <Button>Add Debt</Button>
+                    <Sheet>
+                        <SheetTrigger>
+                            <Button>Add Debt</Button>
+                        </SheetTrigger>
+                        <SheetContent class="w-full md:w-[400px]">
+                            <SheetHeader>
+                                <SheetTitle>Add debt</SheetTitle>
+                            </SheetHeader>
+                            <AddDebt @refetch="refetch" />
+                        </SheetContent>
+                    </Sheet>
                 </CardHeader>
                 <CardContent>
                     Card Content

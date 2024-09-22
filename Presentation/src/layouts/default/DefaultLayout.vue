@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { HomeIcon, ChartNetwork, HandCoins, Handshake, Ellipsis, UserCircle, LogOut, Calendar, Gem } from 'lucide-vue-next';
+import { HomeIcon, HandCoins, Handshake, Ellipsis, UserCircle, LogOut, Calendar, Gem } from 'lucide-vue-next';
 import {
     Drawer,
     DrawerClose,
     DrawerContent,
-    // DrawerDescription,
     DrawerFooter,
     DrawerHeader,
     DrawerTitle,
@@ -44,7 +43,6 @@ import { Button } from '@/components/ui/button';
                 <DrawerContent>
                     <DrawerHeader>
                         <DrawerTitle>More Actions</DrawerTitle>
-                        <!-- <DrawerDescription></DrawerDescription> -->
                     </DrawerHeader>
                     <div class="p-2">
                         <Button variant="ghost" class="w-full justify-start gap-2 text-lg">

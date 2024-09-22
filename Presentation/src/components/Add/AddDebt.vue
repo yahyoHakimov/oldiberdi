@@ -2,7 +2,6 @@
 import { useAuthStore } from '@/stores/auth';
 import api from '@/api/axios';
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Calendar } from '../ui/calendar';
@@ -20,9 +19,9 @@ type addOperationType = {
     "confirmation_needed": true
 
 }
+const emit = defineEmits(['refetch'])
 
 const user = useAuthStore().user
-const router = useRouter()
 const amount = ref<number>(0)
 const phone = ref<string>('')
 const name = ref<string>('')
@@ -46,7 +45,8 @@ const addOperation = async () => {
 
         console.log(response)
         if (response.status === 200) {
-            router.push('/loans')
+            // router.push('/loans')
+            emit('refetch')
         }
     } catch (error) {
         console.log(error)

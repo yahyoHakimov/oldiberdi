@@ -1,15 +1,42 @@
 <script setup lang="ts">
+import api from '@/api/axios';
 import { DebtCard } from '@/components';
 import AddDebt from '@/components/Add/AddDebt.vue';
 import { Button } from '@/components/ui/button';
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
+
     SheetHeader,
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet'
+import { useAuthStore } from '@/stores/auth';
+import { onMounted, ref } from 'vue';
+
+const refetch = () => {
+    console.log('refetch')
+}
+const auth = useAuthStore()
+const loans = ref([])
+
+const fetchOperations = async () => {
+    try {
+        const response = await api.get('/operations', {
+            params: {
+                user_id: auth.user.id,
+                operation_type: 'debt'
+            }
+        })
+        loans.value = response.data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+onMounted(() => {
+    fetchOperations()
+})
 </script>
 
 <template>
@@ -25,7 +52,7 @@ import {
                     <SheetHeader>
                         <SheetTitle>Add debt</SheetTitle>
                     </SheetHeader>
-                    <AddDebt />
+                    <AddDebt @refetch="refetch" />
                 </SheetContent>
             </Sheet>
         </div>
