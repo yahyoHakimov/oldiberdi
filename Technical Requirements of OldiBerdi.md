@@ -51,7 +51,10 @@ We have 2 categories of users: lender and borrower. Any user can have 1 or both 
 We have also moderators, which role is solve the disputes and help with the system to the customers. 
 Moderator has not acces to edit user personal data, or any type of data of users, but they can stop access to some users, who has done prohibited activities or abused other users rights.
 # 8. Scheme of the project 
-Please refer to the UML diagrams in the `uml-diagrams/` folder.
+Our project architecture is illustrated in the UML diagram below:
+
+![Project Scheme](uml-diagrams/Uml1.png)
+![Project Scheme](uml-diagrams/uml2.png)
 # 9. Integreations
 The project will be integrated with three third-party services:
 1. **Identification service.** As an identification service, integration with My ID is provided, which is by far the most common identification tool with high reliability.
