@@ -9,6 +9,11 @@
         public int RegionCode { get; set; }
         public DateTime AddedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
+        public int CountryCode { get; set; } // Foreign key to Country
         public Country Country { get; set; }
+
+        public ICollection<District> Districts { get; set; } // Navigation property
+
+
     }
 }

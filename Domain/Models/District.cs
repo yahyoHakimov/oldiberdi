@@ -9,6 +9,9 @@
         public int CountryCode { get; set; }
         public DateTime AddedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
+        public int RegionCode { get; set; } // Foreign key to Region
         public Region Region { get; set; }
+
+
     }
 }

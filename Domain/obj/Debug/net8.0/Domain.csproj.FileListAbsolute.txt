@@ -1,13 +1,6 @@
-D:\newHack\Domain\bin\Debug\net8.0\Domain.deps.json
-D:\newHack\Domain\bin\Debug\net8.0\Domain.dll
-D:\newHack\Domain\bin\Debug\net8.0\Domain.pdb
 D:\newHack\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
 D:\newHack\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\newHack\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
 D:\newHack\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
 D:\newHack\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
 D:\newHack\Domain\obj\Debug\net8.0\Domain.sourcelink.json
-D:\newHack\Domain\obj\Debug\net8.0\Domain.dll
-D:\newHack\Domain\obj\Debug\net8.0\refint\Domain.dll
-D:\newHack\Domain\obj\Debug\net8.0\Domain.pdb
-D:\newHack\Domain\obj\Debug\net8.0\ref\Domain.dll

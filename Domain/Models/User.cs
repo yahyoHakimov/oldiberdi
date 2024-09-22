@@ -19,14 +19,19 @@
         public string Address { get; set; }
         public bool LivenessPassed { get; set; } = false;
         public bool Identified { get; set; } = false;
-        public StatusEnum Status { get; set; } = StatusEnum.New;
+        public StatusEnum Status { get; set; } = StatussEnum.New;
         public int SubPlanId { get; set; }  // FK to Subscription Plan
         public DateTime? SubExpireDate { get; set; }
         public DateTime AddedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
+
+        public ICollection<Operation> Operations { get; set; } // User owns multiple Operations
+        public ICollection<Counterparty> Counterparties { get; set; } // User can have multiple Counterparties
+        public ICollection<Notification> Notifications { get; set; } // User receives multiple Notifications
+
     }
 
-    public enum StatusEnum
+    public enum StatussEnum
     {
         New,
         PhoneVerified,

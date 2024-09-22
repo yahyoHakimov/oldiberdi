@@ -9,5 +9,7 @@
         public int CountryCode { get; set; }
         public DateTime AddedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
+
+        public ICollection<Region> Regions { get; set; } // Navigation property
     }
 }
