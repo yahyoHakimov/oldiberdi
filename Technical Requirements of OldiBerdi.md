@@ -53,7 +53,7 @@ Moderator has not acces to edit user personal data, or any type of data of users
 # 8. Scheme of the project 
 Our project architecture is illustrated in the UML diagram below:
 
-![Project Scheme](https://github.com/yahyoHakimov/oldiberdi/blob/main/uml-diagrams/UML2.png)
+![Project Scheme](https://github.com/yahyoHakimov/oldiberdi/blob/main/uml-diagrams/UML1.png)
 ![Project Scheme](https://github.com/yahyoHakimov/oldiberdi/blob/main/uml-diagrams/UML2.png)
 # 9. Integreations
 The project will be integrated with three third-party services:
