@@ -11,35 +11,43 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'vue-router';
+// import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
 import api from '@/api/axios'
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import AddLoan from '@/components/Add/AddLoan.vue';
 import AddDebt from '@/components/Add/AddDebt.vue';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import OperationItem from '@/components/OperationItem/OperationItem.vue';
 
-const router = useRouter()
+// const router = useRouter()
 const auth = useAuthStore()
 
 const debts = ref([])
 const loans = ref([])
-const transactions = ref([])
+// const transactions = ref([])
+const loading = ref(false)
 
 const getDebts = async () => {
     try {
+        loading.value = true
         const response = await api.get('/operations', {
             params: {
-                user_id: auth.user.id
+                user_id: auth.user.id,
+                operation_type: 'debt'
             }
         })
-        debts.value = response.data
+        if (response.status === 200) {
+            loading.value = false
+            debts.value = response.data
+        }
     } catch (error) {
         console.log(error)
+        loading.value = false
     }
 }
 
@@ -47,24 +55,33 @@ const getLoans = async () => {
     try {
         const response = await api.get('/operations', {
             params: {
-                user_id: auth.user.id
+                user_id: auth.user.id,
+                operation_type: 'loan'
             }
         })
-        loans.value = response.data
+        if (response.status === 200) {
+            loading.value = false
+            loans.value = response.data
+        }
     } catch (error) {
+        loading.value = false
         console.log(error)
     }
 }
 
 const getTransactions = async () => {
     try {
-        const response = await api.get('/getTransactions', {
+        const response = await api.get('/transactions', {
             params: {
                 user_id: auth.user.id
             }
         })
-        transactions.value = response.data
+        if (response.status === 200) {
+            loading.value = false
+            loans.value = response.data
+        }
     } catch (error) {
+        loading.value = false
         console.log(error)
     }
 }
@@ -74,6 +91,10 @@ const refetch = () => {
     getLoans()
     getTransactions()
 }
+
+onMounted(() => {
+    refetch()
+})
 </script>
 
 
@@ -111,7 +132,7 @@ const refetch = () => {
             </RouterLink>
         </div>
         <div class="grid md:grid-cols-2 gap-3 mt-5">
-            <Card @click="router.push('loans')">
+            <Card>
                 <CardHeader class="flex justify-between items-center flex-row">
                     <CardTitle>Loans</CardTitle>
                     <Sheet>
@@ -127,13 +148,13 @@ const refetch = () => {
                     </Sheet>
                 </CardHeader>
                 <CardContent>
-                    Card Content
+                    <ScrollArea v-if="!loading" class="w-full border h-[300px]">
+                        <OperationItem v-for="(item, index) in loans" :key="index + 'loan'" operationType="loan"
+                            :item="item" />
+                    </ScrollArea>
                 </CardContent>
-                <CardFooter>
-                    Card Footer
-                </CardFooter>
             </Card>
-            <Card @click="router.push('debts')">
+            <Card>
                 <CardHeader class="flex justify-between items-center flex-row">
                     <CardTitle>Debts</CardTitle>
                     <Sheet>
@@ -149,11 +170,11 @@ const refetch = () => {
                     </Sheet>
                 </CardHeader>
                 <CardContent>
-                    Card Content
+                    <ScrollArea v-if="!loading" class="w-full border h-[300px]">
+                        <OperationItem v-for="(item, index) in debts" :key="index + 'debt'" operationType="debt"
+                            :item="item" />
+                    </ScrollArea>
                 </CardContent>
-                <CardFooter>
-                    Card Footer
-                </CardFooter>
             </Card>
             <Card class="md:col-span-2">
                 <CardHeader>
@@ -163,9 +184,6 @@ const refetch = () => {
                 <CardContent>
                     Card Content
                 </CardContent>
-                <CardFooter>
-                    Card Footer
-                </CardFooter>
             </Card>
         </div>
         <div class="h-[10vh]"></div>

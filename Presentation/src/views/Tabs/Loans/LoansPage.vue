@@ -56,7 +56,8 @@ onMounted(() => {
             </Sheet>
         </div>
         <div class="space-y-2">
-            <LoanCard v-for="(item, index) in 20" :key="index + 'loan'" />
+            <!-- <LoanCard v-for="(item, index) in loans" :key="index + 'loan'" :item="item" /> -->
+            <LoanCard v-for="(item, index) in loans" :key="index + 'loan'" :item="item" />
         </div>
     </div>
 </template>

@@ -89,8 +89,8 @@ const addOperation = async () => {
                 <Calendar v-model="date" />
             </CardContent>
         </Card>
-        <Input v-model="phone" type="text" placeholder="Phone" />
-        <Input v-model="name" type="text" placeholder="Name" />
+        <Input v-model="phone" type="text" placeholder="Counterparty Phone" />
+        <Input v-model="name" type="text" placeholder="Counterparty Name" />
         <Button @click="addOperation">Add</Button>
     </div>
 </template>

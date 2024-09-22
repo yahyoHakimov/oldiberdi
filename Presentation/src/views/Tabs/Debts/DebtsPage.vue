@@ -18,7 +18,7 @@ const refetch = () => {
     console.log('refetch')
 }
 const auth = useAuthStore()
-const loans = ref([])
+const debts = ref([])
 
 const fetchOperations = async () => {
     try {
@@ -28,7 +28,7 @@ const fetchOperations = async () => {
                 operation_type: 'debt'
             }
         })
-        loans.value = response.data
+        debts.value = response.data
     } catch (error) {
         console.log(error)
     }
@@ -57,7 +57,7 @@ onMounted(() => {
             </Sheet>
         </div>
         <div class="space-y-2">
-            <DebtCard v-for="(item, index) in 20" :key="index + 'loan'" />
+            <DebtCard v-for="(item, index) in debts" :key="index + 'loan'" :item="item" />
         </div>
     </div>
 </template>
