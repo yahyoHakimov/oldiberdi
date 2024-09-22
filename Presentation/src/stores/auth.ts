@@ -1,8 +1,8 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import api from '@/api/axios';
+import api from '@/api/axios'
 
-export const useCounterStore = defineStore('auth', () => {
+export const useAuthStore = defineStore('auth', () => {
   const user = ref<{
     id: number
     phone: number
@@ -37,12 +37,35 @@ export const useCounterStore = defineStore('auth', () => {
     status: 'new',
     token: ''
   })
-  const doubleCount = computed(() => count.value * 2)
-  function login(phone: number, password: string) {
+
+  async function login(phone: string, password: string) {
     try {
-      const response = api.post('/user/register', {phone, password})
+      const { data } = await api.post('/user/login', { Phone: phone, Password: password })
+      // return response
+      user.value = data
+    } catch (e) {
+      console.error(e)
     }
   }
 
-  return { count, doubleCount, increment }
+  async function register(phone: string, firstName: string, lastName: string, password: string) {
+    try {
+      const { data } = await api.post('/user/register', {
+        Phone: phone,
+        FirstName: firstName,
+        LastName: lastName,
+        Password: password
+      })
+      // return response
+      user.value = data
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  const isAuth = computed(() => {
+    return user.value.token ? true : false
+  })
+
+  return { login, user, isAuth, register }
 })

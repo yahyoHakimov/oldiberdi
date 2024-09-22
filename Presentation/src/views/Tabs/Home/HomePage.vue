@@ -10,8 +10,10 @@ import {
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'vue-router';
+import { useAuthStore } from '@/stores/auth';
 
 const router = useRouter()
+const auth = useAuthStore()
 </script>
 
 
@@ -19,7 +21,7 @@ const router = useRouter()
     <div class="p-3">
         <div class="flex justify-between items-center p-3">
             <div>
-                <h1 class="text-3xl font-bold">Welcome, {USER}</h1>
+                <h1 class="text-3xl font-bold">Welcome, {{ auth.user.first_name }}</h1>
                 <p class="text-lg">Check your recent activities</p>
             </div>
             <Avatar>

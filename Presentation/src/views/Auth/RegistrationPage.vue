@@ -2,6 +2,18 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { useAuthStore } from '@/stores/auth';
+import { ref } from 'vue';
+
+const auth = useAuthStore()
+const phone = ref('')
+const password = ref('')
+const firstName = ref('')
+const lastName = ref('')
+
+const register = async () => {
+    await auth.register(phone.value, password.value, firstName.value, lastName.value)
+}
 </script>
 
 <template>
@@ -17,23 +29,26 @@ import { Label } from '@/components/ui/label'
             </div>
             <div class="grid gap-4">
                 <div class="grid gap-2">
-                    <Label for="email">Email</Label>
-                    <Input id="email" type="email" placeholder="m@example.com" required />
+                    <Label for="phone">Phone</Label>
+                    <Input v-model="phone" id="email" type="email" placeholder="+998 12 123 12 12" required />
+                </div>
+                <div class="grid gap-2">
+                    <Label for="">First Name</Label>
+                    <Input v-model="firstName" id="email" type="email" placeholder="John" required />
+                </div>
+                <div class="grid gap-2">
+                    <Label for="">Last Name</Label>
+                    <Input v-model="lastName" id="email" type="email" placeholder="Doe" required />
                 </div>
                 <div class="grid gap-2">
                     <div class="flex items-center">
                         <Label for="password">Password</Label>
-                        <a href="/forgot-password" class="ml-auto inline-block text-sm underline">
-                            Forgot your password?
-                        </a>
                     </div>
-                    <Input id="password" type="password" required />
+                    <Input v-model="password" id="password" type="password" required />
                 </div>
-                <Button type="submit" class="w-full">
-                    Login
-                </Button>
-                <Button variant="outline" class="w-full">
-                    Login with Google
+                <Button :disabled="phone.length === 0 || password.length === 0 || firstName.length === 0"
+                    @click="register" type="submit" class="w-full">
+                    Register
                 </Button>
             </div>
             <div class="mt-4 text-center text-sm">

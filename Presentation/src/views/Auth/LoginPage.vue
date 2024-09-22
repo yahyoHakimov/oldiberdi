@@ -2,6 +2,14 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { useAuthStore } from '@/stores/auth';
+import { ref } from 'vue';
+
+const phone = ref('')
+const password = ref('')
+
+const auth = useAuthStore()
+
 </script>
 
 <template>
@@ -17,8 +25,8 @@ import { Label } from '@/components/ui/label'
             </div>
             <div class="grid gap-4">
                 <div class="grid gap-2">
-                    <Label for="email">Email</Label>
-                    <Input id="email" type="email" placeholder="m@example.com" required />
+                    <Label for="email">Phone</Label>
+                    <Input v-model="phone" id="phone" type="phone" placeholder="000 00 00" required />
                 </div>
                 <div class="grid gap-2">
                     <div class="flex items-center">
@@ -27,14 +35,14 @@ import { Label } from '@/components/ui/label'
                             Forgot your password?
                         </a>
                     </div>
-                    <Input id="password" type="password" required />
+                    <Input v-model="password" id="password" type="password" required />
                 </div>
-                <Button type="submit" class="w-full">
+                <Button @click="auth.login(phone, password)" type="submit" class="w-full">
                     Login
                 </Button>
-                <Button variant="outline" class="w-full">
+                <!-- <Button variant="outline" class="w-full">
                     Login with Google
-                </Button>
+                </Button> -->
             </div>
             <div class="mt-4 text-center text-sm">
                 Don't have an account?
