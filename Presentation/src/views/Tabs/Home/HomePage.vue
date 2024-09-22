@@ -10,7 +10,6 @@ import {
 import {
     Card,
     CardContent,
-    CardDescription,
     CardHeader,
     CardTitle,
 } from '@/components/ui/card'
@@ -21,6 +20,7 @@ import api from '@/api/axios'
 import { onMounted, ref } from 'vue';
 import AddLoan from '@/components/Add/AddLoan.vue';
 import AddDebt from '@/components/Add/AddDebt.vue';
+import AddTransaction from '@/components/Add/AddTransaction.vue';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import OperationItem from '@/components/OperationItem/OperationItem.vue';
 
@@ -177,12 +177,22 @@ onMounted(() => {
                 </CardContent>
             </Card>
             <Card class="md:col-span-2">
-                <CardHeader>
+                <CardHeader class="flex justify-between items-center flex-row">
                     <CardTitle>Transactions</CardTitle>
-                    <CardDescription>Card Description</CardDescription>
+                    <Sheet>
+                        <SheetTrigger>
+                            <Button>Add Transaction</Button>
+                        </SheetTrigger>
+                        <SheetContent class="w-full md:w-[400px]">
+                            <SheetHeader>
+                                <SheetTitle>Add Transaction</SheetTitle>
+                            </SheetHeader>
+                            <AddTransaction @refetch="refetch" />
+                        </SheetContent>
+                    </Sheet>
                 </CardHeader>
                 <CardContent>
-                    Card Content
+                    No content yet
                 </CardContent>
             </Card>
         </div>
