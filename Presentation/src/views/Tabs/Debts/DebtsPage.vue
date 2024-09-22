@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { DebtCard } from '@/components';
+import AddDebt from '@/components/Add/AddDebt.vue';
 import { Button } from '@/components/ui/button';
 import {
     Sheet,
@@ -22,12 +23,9 @@ import {
                 </SheetTrigger>
                 <SheetContent class="w-full md:w-[400px]">
                     <SheetHeader>
-                        <SheetTitle>Are you absolutely sure?</SheetTitle>
-                        <SheetDescription>
-                            This action cannot be undone. This will permanently delete your account
-                            and remove your data from our servers.
-                        </SheetDescription>
+                        <SheetTitle>Add debt</SheetTitle>
                     </SheetHeader>
+                    <AddDebt />
                 </SheetContent>
             </Sheet>
         </div>

@@ -14,12 +14,12 @@ import { Button } from '@/components/ui/button';
 </script>
 
 <template>
-    <div class="hidden w-full md:flex bg-background justify-center items-center py-3">
+    <!-- <div class="hidden w-full md:flex bg-background justify-center items-center py-3">
         Home | Loans | Dashboard | Debts | Calendar
-    </div>
+    </div> -->
     <RouterView />
     <div class="fixed md:hidden w-full bottom-0 p-2">
-        <div class="grid grid-cols-11 rounded-lg w-full border bg-background">
+        <div class="grid grid-cols-8 rounded-lg w-full border bg-background">
             <RouterLink to="/" class="p-2 col-span-2 flex justify-center items-center flex-col hover:bg-muted">
                 <HomeIcon class="size-7" />
                 Home
@@ -28,10 +28,10 @@ import { Button } from '@/components/ui/button';
                 <Handshake class="size-7" />
                 Loans
             </RouterLink>
-            <RouterLink to="dashboard" class="p-2 col-span-3 flex justify-center items-center flex-col hover:bg-muted">
+            <!-- <RouterLink to="dashboard" class="p-2 col-span-3 flex justify-center items-center flex-col hover:bg-muted">
                 <ChartNetwork class="size-7" />
                 Overview
-            </RouterLink>
+            </RouterLink> -->
             <RouterLink to="debts" class="p-2  col-span-2 flex justify-center items-center flex-col hover:bg-muted ">
                 <HandCoins class="size-7" />
                 Debts
