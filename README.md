@@ -64,4 +64,5 @@ For detailed UML diagrams of the system, visit the uml-diagrams directory.
 
 👥 Contributors
 🧑‍💻 Yahyo - Project Lead, Backend Developer
-🧑‍💻 Davron - Tech Lead, Frontend Developer
+🧑‍💻 Elbek - Frontend Developer
+🧑‍💻 Diyor - Assisant
