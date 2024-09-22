@@ -45,25 +45,8 @@ npm install
 dotnet restore
 Set Up Environment Variables: Create a .env file in the root directory with the following information:
 
-bash
-Copy code
-DB_CONNECTION_STRING=<your-database-connection-string>
-TWILIO_API_KEY=<your-twilio-api-key>
-STRIPE_SECRET_KEY=<your-stripe-secret-key>
-Run the Application:
-
-Frontend:
-bash
-Copy code
-npm run serve
-Backend:
-bash
-Copy code
-dotnet run
-Open the Application:
-
-Access the frontend at: http://localhost:8080
-Access the API at: http://localhost:5000
+# Access the frontend at: http://localhost:7472
+# Access the API at: http://localhost:3000
 🎮 Usage
 📲 Register an Account: Users can sign up using their phone number and a secure password.
 👥 Create or Join a Group: Users can create a lending group or join an existing one.
