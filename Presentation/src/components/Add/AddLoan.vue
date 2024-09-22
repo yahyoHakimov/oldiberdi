@@ -6,6 +6,7 @@ import { useRouter } from 'vue-router';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Calendar } from '../ui/calendar';
+import { Card, CardContent, CardHeader } from '../ui/card';
 
 type addOperationType = {
     "user_id": number,
@@ -80,10 +81,15 @@ const addOperation = async () => {
                 Full
             </div>
         </div>
-        <div class="flex justify-center items-centter flex-col">
-            Chose closing date:
-            <Calendar v-model="date" />
-        </div>
+        <Card class="flex justify-center items-centter flex-col">
+            <CardHeader>
+                Chose closing date:
+            </CardHeader>
+            <CardContent>
+
+                <Calendar v-model="date" />
+            </CardContent>
+        </Card>
         <Input v-model="phone" type="text" placeholder="Phone" />
         <Input v-model="name" type="text" placeholder="Name" />
         <Button @click="addOperation">Add</Button>
