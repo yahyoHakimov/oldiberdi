@@ -54,7 +54,7 @@ Moderator has not acces to edit user personal data, or any type of data of users
 Our project architecture is illustrated in the UML diagram below:
 
 ![Alt text of the image](https://github.com/yahyoHakimov/oldiberdi/blob/main/uml-diagrams/Uml1.jpeg)
-![Alt text of the image](https://github.com/yahyoHakimov/oldiberdi/blob/main/uml-diagrams/uml2.jpg)
+![Alt text of the image](https://github.com/yahyoHakimov/oldiberdi/blob/main/uml-diagrams/uml2.png)
 # 9. Integreations
 The project will be integrated with three third-party services:
 1. **Identification service.** As an identification service, integration with My ID is provided, which is by far the most common identification tool with high reliability.
