@@ -46,10 +46,9 @@ dotnet restore
 Set Up Environment Variables: Create a .env file in the root directory with the following information:
 
 # Access the frontend at: 
-``` bash
    http://localhost:7472
-
-# Access the API at: http://localhost:3000
+# Access the API at:
+   http://localhost:3000
 🎮 Usage
 📲 Register an Account: Users can sign up using their phone number and a secure password.
 👥 Create or Join a Group: Users can create a lending group or join an existing one.
